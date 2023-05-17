@@ -1,4 +1,5 @@
-function [p_1 q_1 tau_1 ] = quazi_1_method(n,m,u_1,u_2, tau_max)
+%реализация алгоритма получения из полинома квазиполинома добавлением запаздывания
+function [p_1 q_1 tau_1 ] = quazi_1_method(n,m,u_1,u_2, tau_max) 
 
 p_q = BRT(n, u_1, u_2);%
 %p_q = lipatov_1(n,u_1, u_2);
@@ -36,7 +37,7 @@ tau = -t_max;%-rand()*t_max;
 
 p_1 = p;
 q_1 = q;
-tau_1 = tau;%max(tau,-tau_max);
+tau_1 = max(tau,-tau_max);
 end
 
 function [tau_] = minimum_tau(phi,roots_)
