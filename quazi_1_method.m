@@ -26,7 +26,6 @@ roots_ = unique(roots_);
 %w_i = unique([sqrt(roots_);-sqrt(roots_)]) %убрал так как все равно корни все симметричным получается, в итоге tau дублируются
 w_i = unique(sqrt(roots_));
 
-%///////////// отсюда дописать!!!
 %подстановка.
 phi = 1i.*log(-polyval(p_i,w_i)./polyval(q_i,w_i));
 
